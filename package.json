@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "compile": "tsc",
+    "build": "rollup -c"
+  },
+  "description": "Modular TypeScript TileBoard configuration.",
+  "devDependencies": {
+    "rollup": "^0.63.4",
+    "rollup-plugin-typescript2": "^0.15.1",
+    "typescript": "^2.9.2"
+  }
+}
