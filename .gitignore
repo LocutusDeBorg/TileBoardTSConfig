@@ -59,3 +59,10 @@ typings/
 
 # next.js build output
 .next
+.rpt2_cache
+# my personal configs
+rollup.config.js
+tsconfig.json
+package-lock.json
+# link to my personal TileBoard config files
+mine
