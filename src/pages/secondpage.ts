@@ -1,5 +1,5 @@
 import { Page, TileGroup } from "TileBoard";
-import { TextList } from "../../lib/tiles";
+import { TextList } from "tiles";
 
 
 //No, you probably wouldn't do this...but you can :-)

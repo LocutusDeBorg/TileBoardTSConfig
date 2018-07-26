@@ -1,5 +1,5 @@
 import { Page, TileGroup, SliderParam } from "TileBoard";
-import { TextList, Sensor, Slider, Switch, Weather } from '../../lib/tiles';
+import { TextList, Sensor, Slider, Switch, Weather } from 'tiles';
 
 export class MainPage implements Page{
     title   = "Main Page"

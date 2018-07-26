@@ -14,7 +14,14 @@
         "experimentalDecorators": true,
         "allowSyntheticDefaultImports": true,
         "declaration": false,
-        "sourceMap": false
+        "sourceMap": false,
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "*",
+                 "lib/*"
+            ]
+        }
     },
     "include": [
         "src/**/*"
