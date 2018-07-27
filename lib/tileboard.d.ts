@@ -250,12 +250,11 @@ declare module "TileBoard" {
         type: string;
         domain: string;
         service: string;
-        service_data: {       
-        }
+        service_data: {}
     }
 
     export const Api:{
-        send(data: HACall, callback?: (res:any)=>any):any;
+        send(data: HACall, callback?: ((res:any)=>any)):any;
     }
 
     export interface Event{
