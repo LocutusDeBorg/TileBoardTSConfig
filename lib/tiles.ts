@@ -11,13 +11,14 @@ import {
     TextListConfig, WeatherListConfig, SliderConfig
 } from 'TileBoard';
 
+import {shallow} from 'cloner'
 
 export class BaseTile implements Tile{
     id: string;
     position: [number, number];
 
     constructor(public type: string, config:TileConfig){
-        (<any>Object).assign(this, config);
+        shallow.merge(this, config)
     }
 }
 
@@ -128,7 +129,7 @@ export class Light extends BaseTile{
     icons = {on:'mdi-lightbulb-on-outline', off:'mdi-lightbulb-outline'};
     sliders?: SliderParam[];
 
-    constructor(config: LightConfig, defaultSliders:boolean=false){
+    constructor(config: LightConfig, defaultSliders?:boolean){
         super(TYPES.LIGHT, config);
         if (defaultSliders) this.addDefaultSliders();
     }

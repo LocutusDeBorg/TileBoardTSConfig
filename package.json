@@ -6,7 +6,13 @@
   "description": "Modular TypeScript TileBoard configuration.",
   "devDependencies": {
     "rollup": "^0.63.4",
+    "rollup-plugin-commonjs": "^9.1.4",
+    "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-typescript2": "^0.15.1",
-    "typescript": "^2.9.2"
+    "typescript": "^2.9.2",
+    "@types/cloner": "^0.4.0"
+  },
+  "dependencies": {
+    "cloner": "^0.4.0"
   }
 }
