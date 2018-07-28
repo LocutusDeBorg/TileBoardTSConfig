@@ -91,7 +91,7 @@ declare module "TileBoard" {
             } | {
                 bg: string;
             })[];
-        hidden?: (item:any, entity:any)=> boolean | boolean;
+        hidden?: ((item:any, entity:any)=> boolean) | boolean;
     }
 
     export interface AlarmConfig extends TileConfig{}
@@ -212,7 +212,7 @@ declare module "TileBoard" {
         /* hidden: hide group (optional)
         * can be boolean or function that return boolean
         */
-        hidden?: (item:any, entity:any)=>boolean | boolean;        
+        hidden?: ((item:any, entity:any)=>boolean) | boolean;  
         
         /* items: A list of Tile objects. See documentation on Tiles below */
         items: Tile[];
@@ -240,7 +240,7 @@ declare module "TileBoard" {
         /* hidden: hide page (optional)
    * can be boolean or function that return boolean
    */
-        hidden?: (item:any, entity:any)=> boolean | boolean;
+        hidden?: ((item:any, entity:any)=> boolean) | boolean;
 
         /* groups: A list of tile groups. See documentation on Tile Groups below */
         groups: TileGroup[]; // list of tile groups
@@ -250,12 +250,11 @@ declare module "TileBoard" {
         type: string;
         domain: string;
         service: string;
-        service_data: {       
-        }
+        service_data: {}
     }
 
     export const Api:{
-        send(data: HACall, callback?: (res:any)=>any):any;
+        send(data: HACall, callback?: ((res:any)=>any)):any;
     }
 
     export interface Event{

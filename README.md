@@ -27,7 +27,7 @@ I also wanted to freshen my TypeScript skills...it's been a while.
 - Run `npm build`
 - Bask in the splendor that is TileBoard (or just reload your TileBoard in your browser) 
 
-BTW, I would recommend keeping your source files outside of the TileBoardTSConfig directory (and change the entries mentioned above in rollup.config.js and tsconfig.json, accordingly).  This will help with versioning:  I won't crush your config files with updates, and you can have a completely separate repo for your stuff (I keep mine with my Home Assistant config files.)
+BTW, I would recommend keeping your source files outside of the TileBoardTSConfig directory (and change the entries mentioned above in rollup.config.js and tsconfig.json, accordingly).  This will help with versioning:  I won't crush your config files with updates, and you can have a completely separate repo for your stuff (I keep mine with my Home Assistant config files.)  For whatever reason, I wasn't able to get rollup work with external directories.  I ended up using a symlink to my source files.
 
 ## When
 
@@ -38,4 +38,5 @@ I will make a best effort to keep up with the changes to TileBoard.  Those guys 
 So.  There are a few things that I haven't been able to fix:
  - rollup --watch (TSC bombs if the top level (input) file isn't the one changing)
  - true compile errors from rollup.  If rollup pukes, I just run tsc manually to see the error.
+ - transpiling code outside of cwd.
 
