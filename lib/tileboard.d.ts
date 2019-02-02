@@ -302,5 +302,6 @@ declare module "TileBoard" {
         timeFormat?: number;
         transition: string;
         wsUrl: string;
+        rememberLastPage?: boolean;
     }
 }
