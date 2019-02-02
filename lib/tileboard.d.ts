@@ -60,9 +60,21 @@ declare module "TileBoard" {
     export const CUSTOM_THEMES: {
         MOBILE: string;
         TRANSPARENT: string;
+        MATERIAL: string;
         WIN95: string;
         WINPHONE: string;
+        COMPACT: string;
+        HOMEKIT: string;
     };
+
+    export const HEADER_ITEMS, SCREENSAVER_ITEMS: {
+        TIME: string;
+        DATE: string;
+        DATETIME: string;
+        WEATHER: string;
+        CUSTOM_HTML: string;
+     };
+     
 
     export const DEFAULT_HEADER: any;
 
