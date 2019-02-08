@@ -293,8 +293,7 @@ declare module "TileBoard" {
         hideScrollbar: boolean;
         menuPosition: string;
         pages: Page[];
-        passwordType: string;
-        password?: string;
+        authToken?: string;
         screensaver?: ScreensaverParams;
         serverUrl: string;
         tileMargin?: number;
