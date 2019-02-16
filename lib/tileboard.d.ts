@@ -33,6 +33,7 @@ declare module "TileBoard" {
         TEXT_LIST: string;
         WEATHER: string;
         WEATHER_LIST: string;
+        POPUP_IFRAME: string;
     };
 
     export const GROUP_ALIGNS: {
@@ -78,7 +79,7 @@ declare module "TileBoard" {
 
     export const DEFAULT_HEADER: any;
 
-    export interface Tile extends TileConfig {
+    export interface Tile {
         type        : string;
     }
 
@@ -138,7 +139,13 @@ declare module "TileBoard" {
     export interface DoorEntryConfig extends TileConfig{}
     export interface FanConfig extends TileConfig{}
     export interface GenericIconConfig extends TileConfig{}
-    export interface IFrameConfig extends TileConfig{}
+
+    export interface IFrameConfig extends TileConfig{
+        url: (()=>string) | string;
+        iframeStyles?: {} | (any);
+        iframeClasses?: ()=>any | Array<string> | string ;
+    }
+    
     export interface InputBooleanConfig extends TileConfig{}
     export interface InputDateTimeConfig extends TileConfig{}
     export interface InputNumberConfig extends TileConfig{}

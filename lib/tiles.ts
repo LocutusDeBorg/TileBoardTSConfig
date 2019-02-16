@@ -97,7 +97,7 @@ export class GenericIcon extends BaseTile{
 
 export class IFrame extends BaseTile{
     constructor(config: IFrameConfig){
-        super(TYPES.IFRAME, config);
+        super(TYPES.IFRAME, config);      
     }
 }
 
@@ -230,5 +230,11 @@ export class Weather extends BaseTile{
 export class WeatherList extends BaseTile{
     constructor(config: WeatherListConfig){
         super(TYPES.WEATHER_LIST, config)
+    }
+}
+
+export class PopupIFrame extends BaseTile{
+    constructor(config: IFrameConfig){
+        super(TYPES.POPUP_IFRAME, config);
     }
 }
