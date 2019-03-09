@@ -11,14 +11,13 @@ import {
     TextListConfig, WeatherListConfig, SliderConfig
 } from 'TileBoard';
 
-import {shallow} from 'cloner'
 
 export class BaseTile implements Tile{
     id: string;
     position: [number, number];
 
     constructor(public type: string, config:TileConfig){
-        shallow.merge(this, config)
+        Object.assign(this, config)
     }
 }
 
