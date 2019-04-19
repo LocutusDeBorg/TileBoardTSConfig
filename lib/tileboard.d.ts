@@ -57,7 +57,6 @@ declare module "TileBoard" {
         ANIMATED_GPU: string;
         SIMPLE: string;
     };
-    
     export const CUSTOM_THEMES: {
         MOBILE: string;
         TRANSPARENT: string;
@@ -66,6 +65,8 @@ declare module "TileBoard" {
         WINPHONE: string;
         COMPACT: string;
         HOMEKIT: string;
+        WHITE_PAPER: string;
+        FRESH_AIR: string;
     };
 
     export const HEADER_ITEMS, SCREENSAVER_ITEMS: {
