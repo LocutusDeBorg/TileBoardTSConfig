@@ -16,15 +16,15 @@ I also wanted to freshen my TypeScript skills...it's been a while.
 
 - Install npm (TODO: Add link)
 - Download the code
-- Install rollup: `npm install rollup --global`
-- run `npm install`
+- Install yarn: `npm install yarn --global`
+- run `yarn`
 - Copy rollup.config.example.js to rollup.config.js
 - Copy tsconfig.example.json to tsconfig.json
 - Edit rollup.config.js (`output.file` item of the default export object) to point to your TileBoard directory 
 - Edit rollup.config.js (`input` item of the default export object) to point to your source directory
 - Edit tsconfig.json to point to your source directory
 - Review/edit the examples in the src directory (I use VSCode...HIGHLY RECOMMENDED!!!)
-- Run `npm build`
+- Run `yarn build`
 - Bask in the splendor that is TileBoard (or just reload your TileBoard in your browser) 
 
 BTW, I would recommend keeping your source files outside of the TileBoardTSConfig directory (and change the entries mentioned above in rollup.config.js and tsconfig.json, accordingly).  This will help with versioning:  I won't crush your config files with updates, and you can have a completely separate repo for your stuff (I keep mine with my Home Assistant config files.)  For whatever reason, I wasn't able to get rollup work with external directories.  I ended up using a symlink to my source files.
