@@ -11,12 +11,16 @@ declare module "TileBoard" {
         CAMERA_THUMBNAIL: string;
         CLIMATE: string;
         COVER: string;
+        COVER_TOGGLE: string;
         CUSTOM: string;
         DEVICE_TRACKER: string;
+        DIMMER_SWITCH: string;
         DOOR_ENTRY: string;
         FAN: string;
+        GAUGE: string;
         GENERIC_ICON: string;
         IFRAME: string;
+        IMAGE: string;
         INPUT_BOOLEAN: string;
         INPUT_DATETIME: string;
         INPUT_NUMBER: string;
@@ -130,6 +134,8 @@ declare module "TileBoard" {
 
     export interface CoverConfig extends TileConfig{}
 
+    export interface CoverToggleConfig extends TileConfig{}
+
     export interface DeviceTrackerConfig extends TileConfig{
         slidesDelay: number;
         map: string;
@@ -137,14 +143,45 @@ declare module "TileBoard" {
         hideEntityPicture?: boolean;
     }
 
+    export interface DimmerSwitchConfig extends TileConfig{
+        action?: (item:any, entity:any)=>any;
+        actionPlus?: (item:any, entity:any)=>any;
+        actionMinus?: (item:any, entity:any)=>any;
+    }
+
     export interface DoorEntryConfig extends TileConfig{}
     export interface FanConfig extends TileConfig{}
+
+    interface GaugeSettings{
+        size?: number;
+        type?: 'full'|'semi'|'arch';
+        min?: number;
+        max?: number;
+        cap?: 'round'|'butt';
+        thick?: number;
+        label?: string;
+        append?: string;
+        prepend?: string;
+        duration?: number;
+        threshold?: {};
+        labelOnly?: boolean;
+        foregroundColor?: string;
+        backgroundColor?: string;
+        fractionSize?: number;
+    }
+    export interface GaugeConfig extends TileConfig{
+        settings: GaugeSettings;
+    }
     export interface GenericIconConfig extends TileConfig{}
 
     export interface IFrameConfig extends TileConfig{
         url: (()=>string) | string;
         iframeStyles?: {} | (any);
         iframeClasses?: ()=>any | Array<string> | string ;
+    }
+
+    export interface ImageConfig extends TileConfig{
+        url: (item:any, entity:any)=>string | string;
     }
     
     export interface InputBooleanConfig extends TileConfig{}

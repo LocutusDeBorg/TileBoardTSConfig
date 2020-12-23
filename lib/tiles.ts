@@ -3,12 +3,12 @@ import {
     LightConfig, SliderParam, ClimateConfig, 
     MediaPlayerConfig, AlarmConfig, SensorConfig, 
     SensorIconConfig, CustomConfig, AutomationConfig, 
-    CameraConfig, CameraThumbnailConfig, CoverConfig, 
-    DeviceTrackerConfig, DoorEntryConfig, FanConfig, 
+    CameraConfig, CameraThumbnailConfig, CoverConfig, CoverToggleConfig, 
+    DeviceTrackerConfig, DimmerSwitchConfig, DoorEntryConfig, FanConfig, 
     GenericIconConfig, IFrameConfig, InputBooleanConfig, 
     InputDateTimeConfig, InputNumberConfig, InputSelectConfig, 
     LockConfig, SceneConfig, ScriptConfig, WeatherConfig, 
-    TextListConfig, WeatherListConfig, SliderConfig
+    TextListConfig, WeatherListConfig, SliderConfig, GaugeConfig, ImageConfig
 } from 'TileBoard';
 
 
@@ -63,6 +63,12 @@ export class Cover extends BaseTile{
     }
 }
 
+export class CoverToggle extends BaseTile{
+    constructor(config:CoverToggleConfig){
+        super(TYPES.COVER_TOGGLE, config)
+    }
+}
+
 
 export class Custom extends BaseTile{
     constructor(config: CustomConfig){
@@ -73,6 +79,12 @@ export class Custom extends BaseTile{
 export class DeviceTracker extends BaseTile{
     constructor(config: DeviceTrackerConfig){
         super(TYPES.DEVICE_TRACKER, config);
+    }
+}
+
+export class DimmerSwitch extends BaseTile{
+    constructor(config: DimmerSwitchConfig){
+        super(TYPES.DIMMER_SWITCH, config)
     }
 }
 
@@ -88,6 +100,12 @@ export class Fan extends BaseTile{
     }
 }
 
+export class Gauge extends BaseTile{
+    constructor(config: GaugeConfig){
+        super(TYPES.GAUGE, config)
+    }
+}
+
 export class GenericIcon extends BaseTile{
     constructor(config: GenericIconConfig){
         super(TYPES.GENERIC_ICON, config);
@@ -97,6 +115,12 @@ export class GenericIcon extends BaseTile{
 export class IFrame extends BaseTile{
     constructor(config: IFrameConfig){
         super(TYPES.IFRAME, config);      
+    }
+}
+
+export class Image extends BaseTile{
+    constructor(config: ImageConfig){
+        super(TYPES.IMAGE, config)
     }
 }
 
