@@ -96,9 +96,10 @@ declare module "TileBoard" {
         width?      : number;
         height?     : number;
         states?     : ((item:any, entity:any)=> any) | {} ;
-        state?      : ((item:any, entity:any)=> string) | string | false | true;
+        state?      : ((item:any, entity:any)=> string) | string | boolean;
         icons?      :  {};
         icon?       : string ;
+        customHtml?  : ((item:any, entity:any)=> string) | string;
         bg?         : string;
         bgSuffix?   : string;
         bgOpacity?  : number;
@@ -109,6 +110,8 @@ declare module "TileBoard" {
             } | {
                 bg: string;
             })[];
+        action?     : ((item:any, entity:any)=> any) | boolean;
+        secondaryAction? : ((item:any, entity:any)=> any) | boolean;
         hidden?: ((item:any, entity:any)=> boolean) | boolean;
     }
 
@@ -117,8 +120,10 @@ declare module "TileBoard" {
     export interface AutomationConfig extends TileConfig{}
 
     export interface CameraConfig extends TileConfig{
-        bgSize: string;
+        bgSize: 'cover'|'contain'|'auto';
         fullscreen: {};
+        filter: (url:string)=>string;
+        hideFromList: boolean;
         refresh: FunctionConstructor | NumberConstructor;
     }
 
@@ -192,6 +197,7 @@ declare module "TileBoard" {
     /** type: LIGHT **/
     export interface LightConfig extends TileConfig{
         sliders?: SliderParam[];
+        colorpicker?: ((item:any, entity:any)=>any) | boolean; 
     }
 
     export interface LockConfig extends TileConfig{}
@@ -200,7 +206,9 @@ declare module "TileBoard" {
         hideSource?: boolean;
     }
     export interface SceneConfig extends TileConfig{}
-    export interface ScriptConfig extends TileConfig{}
+    export interface ScriptConfig extends TileConfig{
+        variables?: {} | ((item:any, entity:any)=>{})
+    }
     
 
     export interface SensorConfig extends TileConfig{
@@ -328,7 +336,9 @@ declare module "TileBoard" {
     }
 
     export interface TBConfig {
-        customTheme: string;
+        authToken?: string;
+        customTheme?: string;
+        debug?: boolean;
         entitySize: string;
         events?: Event[];
         googleApiKey?: string;
@@ -336,9 +346,12 @@ declare module "TileBoard" {
         groupsAlign?: string;
         header?: {};
         hideScrollbar: boolean;
+        mapboxToken?: string;
+        mapboxStyle?: string;
         menuPosition: string;
+        onReady?: ()=>{};
         pages: Page[];
-        authToken?: string;
+        pingConnection?: boolean;
         screensaver?: ScreensaverParams;
         serverUrl: string;
         tileMargin?: number;
