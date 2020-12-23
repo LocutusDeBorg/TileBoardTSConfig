@@ -67,3 +67,4 @@ package-lock.json
 # link to my personal TileBoard config files
 mine
 dist
+yarn.lock
