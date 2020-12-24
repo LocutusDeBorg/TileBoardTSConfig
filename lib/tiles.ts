@@ -1,3 +1,4 @@
+/// <reference path='tileboard.d.ts'/>
 import {
     Tile, TYPES, SwitchConfig, TileConfig, 
     LightConfig, SliderParam, ClimateConfig, 
