@@ -3,7 +3,7 @@ import {
     LightConfig, SliderParam, ClimateConfig, 
     MediaPlayerConfig, AlarmConfig, SensorConfig, 
     SensorIconConfig, CustomConfig, AutomationConfig, 
-    CameraConfig, CameraThumbnailConfig, CoverConfig, CoverToggleConfig, 
+    CameraConfig, CoverConfig, CoverToggleConfig, 
     DeviceTrackerConfig, DimmerSwitchConfig, DoorEntryConfig, FanConfig, 
     GenericIconConfig, IFrameConfig, InputBooleanConfig, 
     InputDateTimeConfig, InputNumberConfig, InputSelectConfig, 
@@ -40,11 +40,6 @@ export class Camera extends BaseTile{
     }
 }
 
-export class CameraThumbnail extends BaseTile{
-    constructor(config: CameraThumbnailConfig){
-        super(TYPES.CAMERA_THUMBNAIL, config)
-    }
-}
 export class Climate extends BaseTile{
     state (item, entity) {
         return 'Current '

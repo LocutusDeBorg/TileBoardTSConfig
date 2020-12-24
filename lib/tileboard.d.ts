@@ -8,7 +8,6 @@ declare module "TileBoard" {
         ALARM: string;
         AUTOMATION: string;
         CAMERA: string;
-        CAMERA_THUMBNAIL: string;
         CLIMATE: string;
         COVER: string;
         COVER_TOGGLE: string;
@@ -120,14 +119,12 @@ declare module "TileBoard" {
     export interface AutomationConfig extends TileConfig{}
 
     export interface CameraConfig extends TileConfig{
-        bgSize: 'cover'|'contain'|'auto';
-        fullscreen: {};
-        filter: (url:string)=>string;
-        hideFromList: boolean;
-        refresh: FunctionConstructor | NumberConstructor;
+        bgSize?: 'cover'|'contain'|'auto';
+        fullscreen?: {};
+        filter?: (url:string)=>string;
+        hideFromList?: boolean;
+        refresh?: FunctionConstructor | NumberConstructor;
     }
-
-    export interface CameraThumbnailConfig extends CameraConfig{}
 
     export interface ClimateConfig extends TileConfig{
         unit?: string;
@@ -342,7 +339,7 @@ declare module "TileBoard" {
         entitySize: string;
         events?: Event[];
         googleApiKey?: string;
-        groupMarginCss: string;
+        groupMarginCss?: string;
         groupsAlign?: string;
         header?: {};
         hideScrollbar: boolean;
