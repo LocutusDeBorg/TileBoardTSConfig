@@ -123,7 +123,7 @@ declare module "TileBoard" {
         fullscreen?: {};
         filter?: (url:string)=>string;
         hideFromList?: boolean;
-        refresh?: FunctionConstructor | NumberConstructor;
+        refresh?: number | (()=>number);
     }
 
     export interface ClimateConfig extends TileConfig{
