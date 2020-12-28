@@ -334,7 +334,7 @@ declare module "TileBoard" {
 
     export interface TBConfig {
         authToken?: string;
-        customTheme?: string;
+        customTheme?: string | string[];
         debug?: boolean;
         entitySize: string;
         events?: Event[];
