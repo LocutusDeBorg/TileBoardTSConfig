@@ -9,7 +9,7 @@ import {
     GenericIconConfig, IFrameConfig, InputBooleanConfig, 
     InputDateTimeConfig, InputNumberConfig, InputSelectConfig, 
     LockConfig, SceneConfig, ScriptConfig, WeatherConfig, 
-    TextListConfig, WeatherListConfig, SliderConfig, GaugeConfig, ImageConfig
+    TextListConfig, WeatherListConfig, SliderConfig, GaugeConfig, ImageConfig, ENTITY_SIZES
 } from 'TileBoard';
 
 
@@ -18,14 +18,22 @@ export class BaseTile implements Tile{
     position: [number, number];
 
     constructor(public type: string, config:TileConfig){
+        this.setup(config)
         Object.assign(this, config)
     }
+
+    setup(config:TileConfig){}
 }
 
 export class Alarm extends BaseTile{
-    icon: string = 'mdi-alarm';
+    icon?: string;
     constructor(config: AlarmConfig){
         super(TYPES.ALARM, config);
+    }
+    setup(config:AlarmConfig){
+        if (!config.icon && !config.icons){
+            this.icon = 'mdi-alarm'
+        }
     }
 }
 
@@ -42,15 +50,11 @@ export class Camera extends BaseTile{
 }
 
 export class Climate extends BaseTile{
-    state (item, entity) {
-        return 'Current '
-           + entity.attributes.current_temperature
-           + entity.attributes.unit_of_measurement;
-     }
-     
+
     constructor(config: ClimateConfig){
         super(TYPES.CLIMATE, config);
     }
+
 }
 
 export class Cover extends BaseTile{
@@ -145,12 +149,18 @@ export class InputSelect extends BaseTile{
 }
 
 export class Light extends BaseTile{
-    icons = {on:'mdi-lightbulb-on-outline', off:'mdi-lightbulb-outline'};
+    icons?: {}
     sliders?: SliderParam[];
 
     constructor(config: LightConfig, defaultSliders?:boolean){
         super(TYPES.LIGHT, config);
         if (defaultSliders) this.addDefaultSliders();
+    }
+
+    setup(config: LightConfig){
+        if (!config.icon && !config.icons){
+            this.icons = {on:'mdi-lightbulb-on-outline', off:'mdi-lightbulb-outline'};
+        }
     }
 
     addDefaultSliders(){
@@ -228,9 +238,14 @@ export class Slider extends BaseTile{
 }
 
 export class Switch extends BaseTile{
-    icons = {off:'mdi-checkbox-blank-outline', on:'mdi-checkbox-intermediate'};
+    icons?: {};
     constructor(config: SwitchConfig){
         super(TYPES.SWITCH, config);
+    }
+    setup(config:SwitchConfig){
+        if (!config.icon && !config.icons){
+            this.icons = {off:'mdi-checkbox-blank-outline', on:'mdi-checkbox-intermediate'};
+        }
     }
 }
 
