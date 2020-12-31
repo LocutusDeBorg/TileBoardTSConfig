@@ -128,6 +128,7 @@ declare module "TileBoard" {
 
     export interface ClimateConfig extends TileConfig{
         unit?: string;
+        useHvacMode?: boolean;
     }
 
     export interface CustomConfig extends TileConfig{
