@@ -202,6 +202,7 @@ declare module "TileBoard" {
     
     export interface MediaPlayerConfig extends TileConfig{
         hideSource?: boolean;
+        hideMuteButton?: boolean;
     }
     export interface SceneConfig extends TileConfig{}
     export interface ScriptConfig extends TileConfig{
