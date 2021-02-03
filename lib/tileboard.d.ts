@@ -140,8 +140,8 @@ declare module "TileBoard" {
     export interface CoverToggleConfig extends TileConfig{}
 
     export interface DeviceTrackerConfig extends TileConfig{
-        slidesDelay: number;
-        map: string;
+        slidesDelay?: number;
+        map?: string;
         zoomLevels? : number[];
         hideEntityPicture?: boolean;
     }
