@@ -8,6 +8,8 @@ declare module "TileBoard" {
         ALARM: string;
         AUTOMATION: string;
         CAMERA: string;
+        CAMERA_STREAM: string;
+        CAMERA_THUMBNAIL: string;
         CLIMATE: string;
         COVER: string;
         COVER_TOGGLE: string;
@@ -18,6 +20,7 @@ declare module "TileBoard" {
         FAN: string;
         GAUGE: string;
         GENERIC_ICON: string;
+        HISTORY: string;
         IFRAME: string;
         IMAGE: string;
         INPUT_BOOLEAN: string;
@@ -27,6 +30,8 @@ declare module "TileBoard" {
         LIGHT: string;
         LOCK: string;
         MEDIA_PLAYER: string;
+        POPUP: string;
+        POPUP_IFRAME: string;
         SCENE: string;
         SCRIPT: string;
         SENSOR: string;
@@ -34,9 +39,9 @@ declare module "TileBoard" {
         SLIDER: string;
         SWITCH: string;
         TEXT_LIST: string;
+        VACUUM: string;
         WEATHER: string;
         WEATHER_LIST: string;
-        POPUP_IFRAME: string;
     };
 
     export const GROUP_ALIGNS: {
